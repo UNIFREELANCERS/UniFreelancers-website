@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <style>
+        .team-member img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 16px;
+        }
+
+        /* Mobile Responsive Styles */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: fixed;
+                top: 0;
+                left: -100%;
+                transition: left 0.3s ease;
+                z-index: 1000;
+            }
+
+            .sidebar.active {
+                left: 0;
+            }
+
+            .sidebar .logo {
+                padding: 15px;
+                font-size: 1.2rem;
+            }
+
+            .sidebar .panel-label {
+                margin: 10px 0 5px 15px;
+                font-size: 0.9rem;
+            }
+
+            .sidebar nav {
+                flex-direction: column;
+                padding: 10px;
+            }
+
+            .sidebar nav a {
+                padding: 10px 15px;
+                margin: 5px 0;
+                font-size: 0.9rem;
+            }
+
+            .main {
+                margin-top: 60px;
+            }
+
+            .header {
+                height: 60px;
+                padding: 0 15px;
+            }
+
+            .header .menu-icon {
+                font-size: 1.5rem;
+            }
+
+            .header .header-actions {
+                gap: 15px;
+                padding-right: 15px;
+            }
+
+            .content {
+                padding: 15px;
+            }
+
+            .card {
+                padding: 20px;
+                margin-bottom: 15px;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+                margin-bottom: 15px;
+            }
+
+            h2 {
+                font-size: 1.2rem;
+                margin: 15px 0 10px 0;
+            }
+
+            p {
+                font-size: 0.9rem;
+                margin-bottom: 12px;
+            }
+
+            .team-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .team-member {
+                padding: 15px;
+            }
+
+            .team-member h3 {
+                font-size: 1.1rem;
+            }
+
+            .team-member p {
+                font-size: 0.85rem;
+            }
+
+            .social-links {
+                gap: 10px;
+            }
+
+            .social-links a {
+                font-size: 1rem;
+                padding: 8px;
+            }
+        }
+
+        /* Small Mobile Devices */
+        @media (max-width: 480px) {
+            .sidebar .logo {
+                font-size: 1.1rem;
+            }
+
+            .sidebar nav a {
+                font-size: 0.85rem;
+                padding: 8px 12px;
+            }
+
+            .header {
+                height: 50px;
+            }
+
+            .header .menu-icon {
+                font-size: 1.3rem;
+            }
+
+            .content {
+                padding: 10px;
+            }
+
+            .card {
+                padding: 15px;
+            }
+
+            h1 {
+                font-size: 1.3rem;
+            }
+
+            h2 {
+                font-size: 1.1rem;
+            }
+
+            p {
+                font-size: 0.85rem;
+            }
+
+            .team-member {
+                padding: 12px;
+            }
+
+            .team-member h3 {
+                font-size: 1rem;
+            }
+
+            .team-member p {
+                font-size: 0.8rem;
+            }
+
+            .social-links {
+                gap: 8px;
+            }
+
+            .social-links a {
+                font-size: 0.9rem;
+                padding: 6px;
+            }
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuIcon = document.querySelector('.menu-icon');
+            const sidebar = document.querySelector('.sidebar');
+
+            menuIcon.addEventListener('click', function() {
+                sidebar.classList.toggle('active');
+            });
+
+            // Close sidebar when clicking outside
+            document.addEventListener('click', function(event) {
+                if (!event.target.closest('.sidebar') && !event.target.closest('.menu-icon')) {
+                    sidebar.classList.remove('active');
+                }
+            });
+
+            // Handle window resize
+            window.addEventListener('resize', function() {
+                if (window.innerWidth > 768) {
+                    sidebar.classList.remove('active');
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div class="logo">
+                <i class="fas fa-hospital"></i>
+                <div class="logo-text">
+                    UNI Freelancers
+                    <span>Best Freelancing Platform</span>
+                </div>
+            </div>
+            <div class="panel-label">MAIN MENU</div>
+            <nav>
+                <a href="First.html"><i class="fas fa-home"></i> Home</a>
+                <a href="aboutus.html" class="active"><i class="fas fa-user"></i> ABOUT US</a>
+                <a href="jobs.html"><i class="fas fa-hospital"></i> JOBS</a>
+                <a href="procontacts.html"><i class="fas fa-database"></i> CONTACTS</a>
+
+            </nav>
+            
+
+        </div>
+        <div class="main">
+            <div class="header">
+                <i class="fas fa-bars menu-icon"></i>
+                <div class="header-actions">
+                    <i class="fas fa-bell"></i>
+                    <i class="fas fa-envelope"></i>
+                    <div class="profile">
+                        <i class="fas fa-user"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="content">   
+                <section class="hero-section">
+                    <h1 class="hero-title">Welcome to UNI Freelancers</h1>
+                    <p class="hero-subtitle">Connect with healthcare professionals, Academics and medical freelancers for your healthcare projects and other needs. Find the perfect match for your medical, legal, and educational needs.</p>
+                    <a href="register.html" class="cta-button">Get Started</a>
+                    </section>
+
+                    <p1>
+                        <h1>About Us</h1>
+                        <p>
+                            UNI Freelancers is a platform that connects organisational professionals, Academics and medical freelancers for your healthcare projects and other needs. Find the perfect match for your medical, legal, and educational needs.
+                            <br>
+                            <br>
+                            Our mission is to connect organisations with the right professionals for their projects and needs. We believe that everyone deserves access to the best talent, regardless of their location or background.
+                            <br>
+                            <br>
+                            We are a team of experienced professionals who are passionate about connecting people and helping them achieve their goals.
+                            
+                        </p>
+                    </p1>
+                
+
+
+
+    </div>
+
+    
+</body>
+</html>

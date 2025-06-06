@@ -1,0 +1,48 @@
+{
+  "kind": "collectionType",
+  "collectionName": "transcriptions",
+  "info": {
+    "singularName": "transcription",
+    "pluralName": "transcriptions",
+    "displayName": "Transcription",
+    "description": "Transcriptions of audio files"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "audio": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::audio.audio",
+      "inversedBy": "transcription"
+    },
+    "text_content": {
+      "type": "richtext",
+      "required": true
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "pending",
+        "in_progress",
+        "completed",
+        "error"
+      ],
+      "default": "pending",
+      "required": true
+    },
+    "language": {
+      "type": "string",
+      "default": "en",
+      "required": true
+    },
+    "timestamps": {
+      "type": "json"
+    },
+    "metadata": {
+      "type": "json"
+    }
+  }
+} 
